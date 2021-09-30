@@ -1,17 +1,17 @@
-#Substituiton Example
+# Substituiton Example
 
-####uses java 17 (openjdk) and Gradle 7.2
+#### uses java 17 (openjdk) and Gradle 7.2
 
 This project marks a difficulty I am having with the JAXB-Substitution plugin
 
-###Problem #1
-####getters and setters for Substituted fields are lowercase:
+### Problem #1
+#### getters and setters for Substituted fields are lowercase:
 
 ex: Garage.getvehicle 
 should be Garage.getVehicle()
 
-###Problem #2 
-####Running main class gives IllegalAnnotationException:
+### Problem #2 
+#### Running main class gives IllegalAnnotationException:
 
     BUILD SUCCESSFUL in 596ms
     4 actionable tasks: 1 executed, 3 up-to-date
