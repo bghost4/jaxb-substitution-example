@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/sub"
+           xmlns:Q1="http://www.example.com/sub"
+>
+
+    <xs:annotation>
+        <xs:documentation>
+            This Schema is a model (data) for a card. this is the logical structure of what features the card has and how they connect to each other
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="PowerTrain" type="Q1:PowerTrainType" abstract="true" />
+    <xs:element name="Electric" type="Q1:Electric" substitutionGroup="Q1:PowerTrain" />
+    <xs:element name="IC" type="Q1:InternalCombustion" substitutionGroup="Q1:PowerTrain" />
+    <xs:element name="Hybrid" type="Q1:Hybrid" substitutionGroup="Q1:PowerTrain"/>
+
+    <xs:element name="Vehicle" type="Q1:VehicleType" abstract="true" />
+
+    <xs:element name="Car" type="Q1:CarType"
+                substitutionGroup="Q1:Vehicle" />
+
+    <xs:element name="Truck" type="Q1:TruckType"
+                substitutionGroup="Q1:Vehicle" />
+
+    <xs:element name="Bicycle" type="Q1:Bicycle"
+                substitutionGroup="Q1:Vehicle" />
+
+    <xs:element name="Garage" type="Q1:GarageType" />
+
+    <xs:complexType name="TruckType">
+        <xs:complexContent>
+            <xs:extension base="Q1:VehicleType">
+                <xs:sequence />
+                <xs:attribute name="solenoid" type="xs:int"
+                              use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="VehicleType" abstract="true">
+        <xs:attribute name="id" type="xs:int" use="required" />
+        <xs:attribute name="make" type="xs:string" use="required" />
+        <xs:attribute name="model" type="xs:string" use="required" />
+        <xs:attribute name="year" type="xs:int" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="CarType">
+        <xs:complexContent>
+            <xs:extension base="Q1:VehicleType">
+                <xs:sequence>
+                    <xs:element ref="Q1:PowerTrain" minOccurs="1" />
+                </xs:sequence>
+                <xs:attribute name="doors" type="xs:int" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <xs:complexType name="Bicycle">
+        <xs:complexContent>
+            <xs:extension base="Q1:VehicleType">
+                <xs:attribute name="numberOfSpeeds" type="xs:int" />
+
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="GarageType">
+        <xs:sequence>
+            <xs:element name="OwnerName" type="xs:string" />
+            <xs:element ref="Q1:Vehicle" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PowerTrainType" abstract="true">
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="InternalCombustion">
+        <xs:complexContent>
+        <xs:extension base="Q1:PowerTrainType">
+            <xs:attribute name="cylinders" type="xs:int" />
+            <xs:attribute name="fuelType" type="xs:string"/>
+        </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Electric">
+        <xs:complexContent>
+            <xs:extension base="Q1:PowerTrainType">
+                <xs:attribute name="motorPowerWatts" type="xs:int"/>
+                <xs:attribute name="batteryChemistry" type="xs:string" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Hybrid">
+        <xs:complexContent>
+            <xs:extension base="Q1:PowerTrainType">
+                <xs:sequence>
+                    <xs:element name="HybIC" type="Q1:InternalCombustion" />
+                    <xs:element name="HybElectric" type="Q1:Electric" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+
+    </xs:complexType>
+
+</xs:schema>
