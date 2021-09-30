@@ -5,12 +5,6 @@
            xmlns:Q1="http://www.example.com/sub"
 >
 
-    <xs:annotation>
-        <xs:documentation>
-            This Schema is a model (data) for a card. this is the logical structure of what features the card has and how they connect to each other
-        </xs:documentation>
-    </xs:annotation>
-
     <xs:element name="PowerTrain" type="Q1:PowerTrainType" abstract="true" />
     <xs:element name="Electric" type="Q1:Electric" substitutionGroup="Q1:PowerTrain" />
     <xs:element name="IC" type="Q1:InternalCombustion" substitutionGroup="Q1:PowerTrain" />

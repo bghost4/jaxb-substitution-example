@@ -31,8 +31,9 @@ xjcGenerate {
 }
 
 dependencies {
-    implementation("javax.xml.bind:jaxb-api:2.3.1")
-    implementation('org.glassfish.jaxb:jaxb-runtime:2.3.1')
+    //implementation("javax.xml.bind:jaxb-api:2.3.1")
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api:2.3.3")
+    implementation('org.glassfish.jaxb:jaxb-runtime:2.3.3')
     xjcClasspath group: 'org.jvnet.jaxb2_commons', name: 'jaxb2-basics', version: '1.11.1'
     xjcClasspath group: 'org.jvnet.jaxb2_commons', name: 'jaxb2-value-constructor', version: '3.0'
     xjcClasspath group: 'io.fares.bind.xjc.plugins' ,name: 'jaxb-substitution-plugin' ,version: '0.0.6';
