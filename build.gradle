@@ -36,6 +36,6 @@ dependencies {
     implementation('org.glassfish.jaxb:jaxb-runtime:2.3.3')
     xjcClasspath group: 'org.jvnet.jaxb2_commons', name: 'jaxb2-basics', version: '1.11.1'
     xjcClasspath group: 'org.jvnet.jaxb2_commons', name: 'jaxb2-value-constructor', version: '3.0'
-    xjcClasspath group: 'io.fares.bind.xjc.plugins' ,name: 'jaxb-substitution-plugin' ,version: '0.0.6';
+    xjcClasspath group: 'io.fares.bind.xjc.plugins' ,name: 'jaxb-substitution-plugin' ,version: '0.0.7-SNAPSHOT';
     implementation group: 'org.jvnet.jaxb2_commons', name: 'jaxb2-basics-runtime', version: '1.11.1'
 }

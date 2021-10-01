@@ -6,8 +6,8 @@
     <gar:Bicycle id="2" make="Schwinn" model="Protocol 1" year="2020" numberOfSpeeds="24" />
     <gar:Car id="3" make="Toyota" model="Prius" year="2018" doors="3">
         <gar:Hybrid name="Synergy Drive">
-            <HybIC cylinders="4" fuelType="Gasoline"/>
-            <HybElectric batteryChemistry="NickelMetalHidride" motorPowerWatts="1200"/>
+            <gar:IC cylinders="4" fuelType="Gasoline"/>
+            <gar:Electric batteryChemistry="NickelMetalHidride" motorPowerWatts="1200"/>
         </gar:Hybrid>
     </gar:Car>
 </gar:Garage>

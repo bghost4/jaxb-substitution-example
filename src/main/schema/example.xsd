@@ -56,7 +56,6 @@
         <xs:complexContent>
             <xs:extension base="Q1:VehicleType">
                 <xs:attribute name="numberOfSpeeds" type="xs:int" />
-
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -94,8 +93,8 @@
         <xs:complexContent>
             <xs:extension base="Q1:PowerTrainType">
                 <xs:sequence>
-                    <xs:element name="HybIC" type="Q1:InternalCombustion" />
-                    <xs:element name="HybElectric" type="Q1:Electric" />
+                    <xs:element ref="Q1:IC" />
+                    <xs:element ref="Q1:Electric" />
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
