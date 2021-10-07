@@ -1,7 +1,6 @@
 package com.derpderphurr;
 
 import com.example.sub.GarageType;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -19,15 +18,14 @@ public class Example {
         System.out.println("Found XML File");
         try {
             ctx = JAXBContext.newInstance("com.example.sub");
-            //ctx = JAXBContext.newInstance(com.example.sub.ObjectFactory.class);
             JAXBElement<GarageType> garage = ctx.createUnmarshaller().unmarshal(ss, GarageType.class);
 
             System.out.println("Garage Owner: "+
             garage.getValue().getOwnerName()
             );
 
-            if (garage.getValue().getVehicle().size() > 0){
-                garage.getValue().getVehicle().stream().forEach(v -> System.out.printf("Vechicle %s\n", v.getModel()));
+            if (garage.getValue().getvehicle().size() > 0){
+                garage.getValue().getvehicle().stream().forEach(v -> System.out.printf("Vechicle %s\n", v.getModel()));
             } else {
                 System.out.println("No Vehicles Found");
             }

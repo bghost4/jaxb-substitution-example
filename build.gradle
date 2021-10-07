@@ -1,20 +1,14 @@
 plugins {
     id 'java'
-    id 'org.javamodularity.moduleplugin' version '1.8.9'
+    //id 'org.javamodularity.moduleplugin' version '1.8.9'
     id 'org.unbroken-dome.xjc' version '2.0.0'
 }
 
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-java {
-    modularity.inferModulePath = true
-}
 
 compileJava.options.encoding = 'UTF-8'
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
-
 
 repositories {
         mavenCentral()
@@ -23,19 +17,14 @@ repositories {
 
 xjcGenerate {
     extraArgs = [
-            '-Xequals',
-            '-XhashCode',
-            '-Xvalue-constructor',
             '-Xsubstitution'
     ]
 }
 
 dependencies {
     //implementation("javax.xml.bind:jaxb-api:2.3.1")
-    implementation("jakarta.xml.bind:jakarta.xml.bind-api:2.3.3")
-    implementation('org.glassfish.jaxb:jaxb-runtime:2.3.3')
-    xjcClasspath group: 'org.jvnet.jaxb2_commons', name: 'jaxb2-basics', version: '1.11.1'
-    xjcClasspath group: 'org.jvnet.jaxb2_commons', name: 'jaxb2-value-constructor', version: '3.0'
-    xjcClasspath group: 'io.fares.bind.xjc.plugins' ,name: 'jaxb-substitution-plugin' ,version: '0.0.7-SNAPSHOT';
-    implementation group: 'org.jvnet.jaxb2_commons', name: 'jaxb2-basics-runtime', version: '1.11.1'
+    //implementation("jakarta.xml.bind:jakarta.xml.bind-api:2.3.3")
+    //implementation('org.glassfish.jaxb:jaxb-runtime:2.3.3')
+    xjcClasspath group: 'io.fares.bind.xjc.plugins' ,name: 'jaxb-substitution-plugin' ,version: '0.0.6';
+
 }
