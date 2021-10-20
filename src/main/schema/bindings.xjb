@@ -11,11 +11,11 @@
         </jaxb:bindings>
 
         <jaxb:bindings node="xsd:complexType[@name='Bicycle']">
-            <annox:annotate target="class">@javax.xml.bind.annotation.XmlRootElement(name="Car")</annox:annotate>
+            <annox:annotate target="class">@javax.xml.bind.annotation.XmlRootElement(name="Bicycle")</annox:annotate>
         </jaxb:bindings>
 
         <jaxb:bindings node="xsd:complexType[@name='Truck']">
-            <annox:annotate target="class">@javax.xml.bind.annotation.XmlRootElement(name="Car")</annox:annotate>
+            <annox:annotate target="class">@javax.xml.bind.annotation.XmlRootElement(name="Truck")</annox:annotate>
         </jaxb:bindings>
     </jaxb:bindings>
 

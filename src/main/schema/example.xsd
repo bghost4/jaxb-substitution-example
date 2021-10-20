@@ -61,13 +61,7 @@
     <xs:complexType name="Garage">
         <xs:sequence>
             <xs:element name="OwnerName" type="xs:string" />
-            <xs:element name="Vehicles">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element ref="Q1:Vehicle" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
+            <xs:element ref="Q1:Vehicle" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 

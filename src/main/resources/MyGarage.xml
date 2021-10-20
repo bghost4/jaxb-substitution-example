@@ -2,24 +2,12 @@
 
 <gar:Garage xmlns:gar="http://www.example.com/sub" >
     <OwnerName>Del</OwnerName>
-    <Vehicles>
         <gar:Bicycle id="1" make="Schwinn" model="Stingray" year="1973" numberOfSpeeds="1"/>
         <gar:Bicycle id="2" make="Schwinn" model="Protocol 1" year="2020" numberOfSpeeds="24" />
         <gar:Car id="3" make="Toyota" model="Prius" year="2018" doors="3">
-        <gar:Hybrid name="Synergy Drive">
-            <gar:IC cylinders="4" fuelType="Gasoline"/>
-            <gar:Electric batteryChemistry="NickelMetalHidride" motorPowerWatts="1200"/>
-        </gar:Hybrid>
+            <gar:Hybrid name="Synergy Drive">
+                <gar:IC cylinders="4" fuelType="Gasoline"/>
+                <gar:Electric batteryChemistry="NickelMetalHidride" motorPowerWatts="1200"/>
+            </gar:Hybrid>
         </gar:Car>
-    </Vehicles>
-    <!--
-    <gar:Bicycle id="1" make="Schwinn" model="Stingray" year="1973" numberOfSpeeds="1"/>
-    <gar:Bicycle id="2" make="Schwinn" model="Protocol 1" year="2020" numberOfSpeeds="24" />
-    <gar:Car id="3" make="Toyota" model="Prius" year="2018" doors="3">
-        <gar:Hybrid name="Synergy Drive">
-            <gar:IC cylinders="4" fuelType="Gasoline"/>
-            <gar:Electric batteryChemistry="NickelMetalHidride" motorPowerWatts="1200"/>
-        </gar:Hybrid>
-    </gar:Car>
-    -->
 </gar:Garage>
