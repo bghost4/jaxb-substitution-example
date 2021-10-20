@@ -17,7 +17,8 @@ repositories {
 
 xjcGenerate {
     extraArgs = [
-            '-Xsubstitution'
+            '-Xsubstitution',
+            '-Xannotate'
     ]
 }
 
@@ -26,5 +27,6 @@ dependencies {
     //implementation("jakarta.xml.bind:jakarta.xml.bind-api:2.3.3")
     //implementation('org.glassfish.jaxb:jaxb-runtime:2.3.3')
     xjcClasspath group: 'io.fares.bind.xjc.plugins' ,name: 'jaxb-substitution-plugin' ,version: '0.0.6';
+    xjcClasspath 'org.jvnet.jaxb2_commons:jaxb2-basics-annotate:1.1.0'
 
 }

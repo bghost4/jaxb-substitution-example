@@ -1,0 +1,22 @@
+<jaxb:bindings xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:annox="http://annox.dev.java.net"
+               xmlns:substitution="http://jaxb2-commons.dev.java.net/basic/substitution"
+               jaxb:extensionBindingPrefixes="annox"
+               jaxb:version="2.1">
+
+    <jaxb:bindings schemaLocation="example.xsd">
+        <jaxb:bindings node="xsd:complexType[@name='Car']">
+            <annox:annotate target="class">@javax.xml.bind.annotation.XmlRootElement(name="Car")</annox:annotate>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="xsd:complexType[@name='Bicycle']">
+            <annox:annotate target="class">@javax.xml.bind.annotation.XmlRootElement(name="Car")</annox:annotate>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="xsd:complexType[@name='Truck']">
+            <annox:annotate target="class">@javax.xml.bind.annotation.XmlRootElement(name="Car")</annox:annotate>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+</jaxb:bindings>

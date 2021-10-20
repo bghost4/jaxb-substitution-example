@@ -24,8 +24,8 @@ public class Example {
             garage.getValue().getOwnerName()
             );
 
-            if (garage.getValue().getvehicle().size() > 0){
-                garage.getValue().getvehicle().stream().forEach(v -> System.out.printf("Vechicle %s\n", v.getModel()));
+            if (garage.getValue().getVehicles().getvehicle().size() > 0){
+                garage.getValue().getVehicles().getvehicle().stream().forEach(v -> System.out.printf("Vechicle %s\n", v.getModel()));
             } else {
                 System.out.println("No Vehicles Found");
             }
